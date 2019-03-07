@@ -1,0 +1,22 @@
+#-v (where to alocate )
+#-p 8080:80/udp 	Map UDP port 80 in the container to port 8080 on the Docker host.
+#docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+#The docker exec command runs a new command in a running container.
+#The command started using docker exec only runs while the container’s primary process (PID 1) is running, and it is not restarted if the container is restarted.
+#COMMAND will run in the default directory of the container. If the underlying image has a custom directory specified with the WORKDIR directive in its Dockerfile, this will be used instead.
+#from Flask site 
+#from flask import Flask
+#app = Flask(__name__)
+
+#@app.route('/')
+#def hello_world():
+ #   return 'Hello, World!'
+#http://flask.pocoo.org/docs/1.0/quickstart/
+
+ #The FLASK_APP environment variable is the name of the module to import at flask run. In case that module is incorrectly named you will get an import error upon start (or if debug is enabled when you navigate to the application). It will tell you what it tried to import and why it failed.
+
+docker-machine ssh Char mkdir /home/mypy
+docker-machine scp ~/docker/00_how_to_docker/ex19.py Char:/home/mypy
+docker run --name Abathur -p 3000:3000 -e FLASK_APP=ex19.py -w /root -v /home/mypy:/root python:2-slim bash -c 'pip install flask && flask run -h 0.0.0.0 -p 3000' python
+
+#curl $(docker-machine ip Char):3000

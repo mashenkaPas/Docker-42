@@ -1,0 +1,4 @@
+#-f, --format string — Format the output using the given Go template.
+#docker inspect -f '{{ .NetworkSettings.IPAddress }}' 82dc86ce53bd
+
+docker inspect -f '{{ .NetworkSettings.IPAddress }}' overlord

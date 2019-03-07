@@ -1,0 +1,7 @@
+#also may use -> docker container prune
+#--rm  Automatically remove the container when it exits.
+#-i Interactive mode (Keep STDIN open even if not attached)
+#-t Allocate a pseudo-TTY
+#Подсистема TTY, или TTY-абстракция, — это одна из основ UNIX-систем, в частности Linux. Данная система предназначена для использования одного терминала несколькими процессами, некоторых возможностей ввода (например, отправка сигналов специальными клавишами, удаление введёных символов)
+
+docker run -it --rm alpine

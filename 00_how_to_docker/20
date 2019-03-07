@@ -1,0 +1,7 @@
+#Run the following command to create a new swarm:
+#docker swarm init --advertise-addr <MANAGER-IP>
+# If you are using Docker Desktop for Mac or Docker Desktop for Windows to test single-node swarm, simply run docker swarm init with no arguments. There is no need to specify --advertise-addr in this case
+#https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/
+#https://docs.docker.com/engine/swarm/key-concepts/
+
+docker swarm init --advertise-addr $(docker-machine ip Char)

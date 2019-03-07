@@ -1,0 +1,8 @@
+# docker-machine --native-ssh ssh "docker swarm join-token worker Aiur" "docker swarm join-token maneger Char"
+# --quiet, -q — Only display token.
+# https://docs.docker.com/engine/swarm/join-nodes/
+# https://docs.docker.com/engine/swarm/join-nodes/#join-as-a-worker-node
+#
+#To login, just run docker-machine ssh machinename:
+
+docker-machine ssh Aiur "docker swarm join --token $(docker swarm join-token worker -q) $(docker-machine ip Char):2377"

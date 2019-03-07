@@ -1,0 +1,17 @@
+FROM ruby:2.5.1
+
+RUN apt-get update -y && apt-get install nodejs -y && \
+	gem install rails && apt-get install mysql-server -y && \
+	service mysql start
+
+COPY app/ /opt
+WORKDIR /opt/app
+
+EXPOSE 3000:3000
+
+RUN bundle install && rake db:migrate && rake db:setup && rake db:seed
+
+CMD ["rails", "server"]
+
+#docker build -t ft-rails:on-build . 
+

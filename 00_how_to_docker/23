@@ -1,0 +1,4 @@
+#docker network create --cluster-store overmind 
+#docker network create --internal overlay overmind 
+
+docker network create -d overlay overmind

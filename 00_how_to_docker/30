@@ -1,0 +1,6 @@
+#docker service scale SERVICE=REPLICAS [SERVICE=REPLICAS...]
+#--detach , -d 	Exit immediately instead of waiting for the service to converge (для зближення)
+#to check
+#docker service logs -f $(docker service ps marines -f "name=marines.11" -q)
+
+docker service scale --detach  marines=20

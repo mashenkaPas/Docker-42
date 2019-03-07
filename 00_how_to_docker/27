@@ -1,0 +1,8 @@
+# docker service ps -f "name=redis.1" redis
+#docker service Lists the tasks that are running as part of the specified services. This command has to be run targeting a manager node.
+#-filter , -f		Filter output based on conditions provided
+#--quiet , -q  Only display task IDs
+	#The name filter matches on task names.
+	# docker service ps -f "name=redis.1" redis
+
+docker service logs -f "$(docker service ps engineering-bay -f "name=engineering-bay.1" -q)"

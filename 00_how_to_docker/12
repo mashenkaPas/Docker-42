@@ -1,0 +1,10 @@
+#-e, --env list — Set environment variables.
+#MySQL includes a mysql_native_password plugin that implements native authentication; that is, authentication based on the password hashing method in use from before the introduction of pluggable authentication
+#MySQL client programs use mysql_native_password by default. The --default-auth option can be used as a hint about which client-side plugin the program can expect to use:
+
+#docker run -d --name spawning-pool --restart=on-failure:10 -e MYSQL_ROOT_PASSWORD=Kerrigan -e MYSQL_DATABASE=zerglings --volume hatchery:/var/lib/mysql mysql --default-auth=mysql_native_password
+#The best variant to use code below ,beause in ex14 you need launch a wordpress container and it should be able to use the spawning-pool container as a database
+service, but mysql:8 changed loginsystem, so it would give the errors, that's why its better to use mysql:5.7 version  
+
+docker run --name spawning-pool -v hatchery --restart always -e MYSQL_ROOT_PASSWORD=Kerrigan -e MYSQL_DATABASE=zerglings -d mysql:5.7
+
